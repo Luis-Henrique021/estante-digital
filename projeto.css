@@ -1,0 +1,138 @@
+/* MUDANÇA GERAL */
+* {margin: 0; padding: 0; box-sizing: border-box;
+    /* tudo isso faz com que não se crie nenhuma margem (margin) e espaçamento interno (padding), box-sizing especifica o comportamento das propriedades de largura (width) e altura (height) */
+}
+
+/* CABEÇALHO */
+.header {
+    background-color: black;
+    /* muda a cor de fundo */
+    width: 100%;
+    /* faz com que a largura do header fique  */
+    padding: 10px;
+    /* cria um espaçamento interno que vai das lados até o meio */
+    top: 0;
+    /* aumenta ou diminue a distaância do conteúdo em relação ao topo da página */
+    left: 0;
+    /* mesma coisa que o top, porém no lado esquerdo */
+    /* position: fixed;
+    fixa a posição do header; */
+    z-index: 10;
+}
+
+/* Titulo */
+#tituloPrin{
+    color: white;
+    text-align: center;
+    /* fonte */
+    font-family: 'Courier New', Courier, monospace;
+    font-style: italic;
+    font-size: 42px;
+}
+
+/* SEPARAÇÃO MENU (ESQUERDA) E CONTEUDO (DIREITA) */
+#container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+/* MENU */
+.menu {
+    background-color: black;
+    width: 10%;
+    padding: 10px;
+    text-align: center;
+}
+
+/* titulo do menu */
+.menu h3 {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    /* adiciona margens */
+    color: white;
+    font-size: 25px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* lista principal */
+.menu ul {
+    list-style: none;
+    /* Remove as bolinhas da lista */
+}
+
+/* itens da lista principal */
+.menu ul li {
+    display: grid;
+    /* grid faz com que os itens fiquem alinhados */
+    position: relative;
+}
+
+/* links dos itens */
+.menu ul li a {
+    color: white;
+    /* Muda a cor dos links */
+    text-decoration: none;
+    /* Remove o sublinhado dos links */
+    display: inline-block;
+}
+
+/* SUBMENU */
+/* submenus dos itens (ex: livros da categoria Livros) */
+#ulPrin ul {
+    display: none;
+    /* se eu colocar isso, o conteudo sai da tela */
+    left: 80%;
+    /* mudar isso == muda distância do submenu em relação à esquerda ao item principal */
+    top: 0;
+    /* mudar isso == muda distância do topo do item em relação item principal */
+    background-color: #A19E9D;
+    position: absolute;
+
+    z-index: 1;
+    /* modifica a distância em Z (valor negativo move para tras e positivo para frente) */
+}
+
+/* itens */
+#ulPrin ul li {
+    display: block;
+    /* para os itens não ficarem um cima do outro */
+    width: 200px;
+}
+
+/* links dos itens */
+#ulPrin ul li a {
+    padding: 10px;
+    color: white;
+    display: block;
+    /* para não se sobreporem */   
+    text-decoration: none;
+}
+
+#ulPrin ul li a:hover {
+    background-color: darkgray;
+    color: white;
+}
+
+#ulPrin li:hover > ul {
+/* quando o mouse passa sobre um item da lista principal (ulPrin)
+   e encontrar o descendente */
+    display: block;
+    /* ... vai tornar o filho visivel, exibindo-o como um bloco */
+}
+
+/* CONTEÚDO */
+.conteudo {
+    background-color: #FFFFFF;
+    padding: 10px;
+    width: 90%; 
+}
+
+#footer {
+    background-color: blue;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+}
