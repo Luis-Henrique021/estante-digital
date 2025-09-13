@@ -3,13 +3,13 @@
     /* tudo isso faz com que não se crie nenhuma margem (margin) e espaçamento interno (padding), box-sizing especifica o comportamento das propriedades de largura (width) e altura (height) */
 }
 
-/* CABEÇALHO */
+/* INÍCIO - CABEÇALHO */
 .header {
     background-color: black;
     /* muda a cor de fundo */
     width: 100%;
     /* faz com que a largura do header fique  */
-    padding: 10px;
+    padding: 15px;
     /* cria um espaçamento interno que vai das lados até o meio */
     top: 0;
     /* aumenta ou diminue a distaância do conteúdo em relação ao topo da página */
@@ -27,7 +27,7 @@
     /* fonte */
     font-family: 'Courier New', Courier, monospace;
     font-style: italic;
-    font-size: 42px;
+    font-size: 50px;
 }
 
 /* SEPARAÇÃO MENU (ESQUERDA) E CONTEUDO (DIREITA) */
@@ -36,11 +36,12 @@
     flex-direction: row;
     height: 100vh;
 }
+/* FIM - CABEÇALHO */
 
-/* MENU */
+/* INÍCIO - MENU */
 .menu {
     background-color: black;
-    width: 10%;
+    width: 200px;
     padding: 10px;
     text-align: center;
 }
@@ -52,7 +53,7 @@
     /* adiciona margens */
     color: white;
     font-size: 25px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 /* lista principal */
@@ -76,13 +77,14 @@
     /* Remove o sublinhado dos links */
     display: inline-block;
 }
+/* FIM - MENU */
 
-/* SUBMENU */
+/* INÍCIO - SUBMENU */
 /* submenus dos itens (ex: livros da categoria Livros) */
 #ulPrin ul {
     display: none;
     /* se eu colocar isso, o conteudo sai da tela */
-    left: 80%;
+    left: 100%;
     /* mudar isso == muda distância do submenu em relação à esquerda ao item principal */
     top: 0;
     /* mudar isso == muda distância do topo do item em relação item principal */
@@ -120,12 +122,33 @@
     display: block;
     /* ... vai tornar o filho visivel, exibindo-o como um bloco */
 }
+/* FIM - SUBMENU */
 
-/* CONTEÚDO */
+/* INÍCIO - CONTEÚDO */
 .conteudo {
     background-color: #FFFFFF;
     padding: 10px;
-    width: 90%; 
+    width: 90%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;    
+}
+/* Título */
+.conteudo h2 {
+    font-size: 35px;
+    text-align: left;
+    color: black;
+    margin: 5px;
+}
+
+.conteudo p {
+    font-size: 20px;
+    text-align: justify;
+    color: black;
+    margin: 5px
+}
+
+.conteudo hr {
+    margin: 5px;
+
 }
 
 #footer {
@@ -136,3 +159,4 @@
     padding: 10px;
     text-align: center;
 }
+/* FIM - CONTEÚDO */
