@@ -5,29 +5,26 @@
 
 /* INÍCIO - CABEÇALHO */
 .header {
-    background-color: black;
-    /* muda a cor de fundo */
+    background-color: #000;
+    /* cor de fundo */
     width: 100%;
-    /* faz com que a largura do header fique  */
+    /* largura do header */
     padding: 15px;
-    /* cria um espaçamento interno que vai das lados até o meio */
+    /* espaçamento interno */
     top: 0;
-    /* aumenta ou diminue a distaância do conteúdo em relação ao topo da página */
+    /* aumenta ou diminue a distância do conteúdo em relação ao topo da página */
     left: 0;
-    /* mesma coisa que o top, porém no lado esquerdo */
-    /* position: fixed;
-    fixa a posição do header; */
-    z-index: 10;
+    /* mesma coisa que o top */
 }
 
 /* Titulo */
 #tituloPrin{
-    color: white;
-    text-align: center;
-    /* fonte */
+    color: #FFFFFF;
     font-family: 'Courier New', Courier, monospace;
     font-style: italic;
     font-size: 50px;
+    text-align: center;
+    /* fonte */
 }
 
 /* SEPARAÇÃO MENU (ESQUERDA) E CONTEUDO (DIREITA) */
@@ -40,39 +37,38 @@
 
 /* INÍCIO - MENU */
 .menu {
-    background-color: black;
+    background-color: #000;
     width: 200px;
-    padding: 10px;
     text-align: center;
 }
 
-/* titulo do menu */
+/* Titulo do menu */
 .menu h3 {
+    color: #FFFFFF;
+    font-size: 30px;
+    font-family: 'Courier New', Courier, monospace;
     margin-bottom: 15px;
     margin-top: 15px;
     /* adiciona margens */
-    color: white;
-    font-size: 25px;
-    font-family: 'Courier New', Courier, monospace;
 }
 
-/* lista principal */
+/* Lista do menu principal */
 .menu ul {
     list-style: none;
     /* Remove as bolinhas da lista */
 }
 
-/* itens da lista principal */
+/* Itens do menu */
 .menu ul li {
-    display: grid;
-    /* grid faz com que os itens fiquem alinhados */
     position: relative;
+    margin-bottom: 10px;
 }
 
-/* links dos itens */
+/* Links dos itens */
 .menu ul li a {
-    color: white;
+    color: #FFFFFF;
     /* Muda a cor dos links */
+    font-size: 20px;
     text-decoration: none;
     /* Remove o sublinhado dos links */
     display: inline-block;
@@ -80,41 +76,46 @@
 /* FIM - MENU */
 
 /* INÍCIO - SUBMENU */
-/* submenus dos itens (ex: livros da categoria Livros) */
+/* Submenus dos itens */
 #ulPrin ul {
+    background-color: #D6D6E3;
     display: none;
     /* se eu colocar isso, o conteudo sai da tela */
-    left: 100%;
+    left: 70%;
     /* mudar isso == muda distância do submenu em relação à esquerda ao item principal */
-    top: 0;
+    top: 50%;
     /* mudar isso == muda distância do topo do item em relação item principal */
-    background-color: #A19E9D;
     position: absolute;
-
     z-index: 1;
     /* modifica a distância em Z (valor negativo move para tras e positivo para frente) */
 }
 
-/* itens */
+/* Itens */
 #ulPrin ul li {
     display: block;
     /* para os itens não ficarem um cima do outro */
     width: 200px;
+    margin: 0;
+    border: solid 1px #A3A3C0;
 }
 
 /* links dos itens */
 #ulPrin ul li a {
+    color: #000;
+    font-size: 20px;
     padding: 10px;
-    color: white;
     display: block;
-    /* para não se sobreporem */   
+    /* para não se sobreporem */
     text-decoration: none;
 }
 
-#ulPrin ul li a:hover {
-    background-color: darkgray;
-    color: white;
+/* passar mouse em cima dos links dos itens */
+#ulPrin li a:hover {
+    background-color: #FFFFFF;
+    color: #000;
 }
+
+
 
 #ulPrin li:hover > ul {
 /* quando o mouse passa sobre um item da lista principal (ulPrin)
@@ -129,34 +130,88 @@
     background-color: #FFFFFF;
     padding: 10px;
     width: 90%;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;    
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 /* Título */
 .conteudo h2 {
+    color: #000;
     font-size: 35px;
     text-align: left;
-    color: black;
     margin: 5px;
 }
 
+/* Parágrafo Inicial */
 .conteudo p {
+    color: #000;
     font-size: 20px;
     text-align: justify;
-    color: black;
-    margin: 5px
-}
-
-.conteudo hr {
     margin: 5px;
-
 }
 
+/* Linha de separação entre os conteúdos */
+.conteudo hr {
+    margin: 10px;
+}
+
+/* CONTAINER DESTAQUES E NOVIDADES */
+.card {
+    background-color: #EDEDF5;
+    padding: 20px;
+    border-radius: 20px;
+    border: solid 1px #cccce3;
+    display: flex;
+    justify-content: space-around;
+    /* distribuição dos itens */
+    align-items: flex-start; 
+    /* Alinha os itens no topo */
+    flex-wrap: wrap;
+    /* Permite que os itens quebrem para a linha de baixo em telas pequenas */
+}
+/* Título principal */
+.card h3{
+    color: #000;
+    font-size: 25px;
+}
+
+/* INÍCIO - DESTAQUES */
+/* Títulos dos destaques */
+#lendo h4, #assistindo h4 {
+    color: #000;
+    font-size: 20px;
+    font-style: italic;
+}
+
+/* Itens dos menus (livro e séries) */
+.destaques ul li {
+    color: #000;
+    font-size: 20px;
+    font-style: italic;
+}
+/* FIM - DESTAQUES */
+
+/* INÍCIO - NOVIDADES */
+/* Itens dos menus (livro e séries) */
+.novidades ul li {
+    font-size: 20px;
+    font-style: italic;
+}
+
+.novidades ul li a {
+    color: #000;
+    text-decoration: none;
+}
+/* FIM - NOVIDADES */
+
+/* FIM - CONTEÚDO */
+
+/* INÍCIO - RODAPÉ */
 #footer {
-    background-color: blue;
+    background-color: #000;
+    color: #FFFFFF;
     bottom: 0;
     left: 0;
     width: 100%;
     padding: 10px;
     text-align: center;
 }
-/* FIM - CONTEÚDO */
+/* FIM - RODAPÉ */
