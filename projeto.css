@@ -1,6 +1,6 @@
 /* MUDANÇA GERAL */
 * {margin: 0; padding: 0; box-sizing: border-box;
-    /* tudo isso faz com que não se crie nenhuma margem (margin) e espaçamento interno (padding), box-sizing especifica o comportamento das propriedades de largura (width) e altura (height) */
+    /* faz com que não se crie nenhuma margem (margin) e espaçamento interno (padding), box-sizing especifica o comportamento das propriedades de largura (width) e altura (height) */
 }
 
 /* INÍCIO - CABEÇALHO */
@@ -115,9 +115,7 @@
     color: #000;
 }
 
-
-
-#ulPrin li:hover > ul {
+#ulPrin li a:hover + ul {
 /* quando o mouse passa sobre um item da lista principal (ulPrin)
    e encontrar o descendente */
     display: block;
@@ -148,9 +146,20 @@
     margin: 5px;
 }
 
+/* links */
+.conteudo a {
+    color: #333;
+    font-style: italic;
+    transition: ease 1s;
+}
+.conteudo a:hover {
+    color: #000;
+    text-decoration: underline;
+}
+
 /* Linha de separação entre os conteúdos */
 .conteudo hr {
-    margin: 10px;
+    margin: 20px;
 }
 
 /* CONTAINER DESTAQUES E NOVIDADES */
@@ -166,6 +175,12 @@
     /* Alinha os itens no topo */
     flex-wrap: wrap;
     /* Permite que os itens quebrem para a linha de baixo em telas pequenas */
+    transition: ease-in 1s;
+}
+
+.card:hover {
+    background-color: #A5D8FF;
+    border: solid 1px #5BAAE7;
 }
 /* Título principal */
 .card h3{
@@ -200,7 +215,51 @@
     color: #000;
     text-decoration: none;
 }
+
+.novidades li a:hover {
+    text-decoration: underline;
+    color: #FFFFFF;
+}
 /* FIM - NOVIDADES */
+
+/* INÍCIO - TODAS RESENHAS */
+/* Ajuste específico para o card resenhas */
+.resenhas.card {
+    display: block;
+    /* Sobrescreve o 'display: flex' da classe .card geral,
+    fazendo com que o título e a lista fiquem um embaixo do outro. */
+}
+
+#todasResenhas {
+    display: flex;
+    /* Transforma a lista em um contêiner flex */
+    flex-wrap: wrap;
+    /* permite a quebra de linha dos itens */
+
+    gap: 10px 20px; /* gap: [espaço vertical] [espaço horizontal]; */
+    /* Cria um espaço de 10px entre as linhas e 20px entre as colunas */
+    
+    list-style: none;
+    margin-top: 15px;
+    /* Espaço abaixo do título */
+}
+#todasResenhas li {
+    font-size: 20px;
+    font-style: italic;
+    flex-basis: 30%;}
+    /* Define a largura base de cada item. Com 30%, o Flexbox tentará colocar 3 itens por linha */
+
+#todasResenhas li a {
+    text-decoration: none;
+    color: #333; /* Uma cor de link um pouco mais suave que o preto puro */
+    display: block; /* Faz o link ocupar todo o espaço do <li> */
+}
+
+#todasResenhas li a:hover {
+    text-decoration: underline; /* Efeito clássico de hover para links */
+    color: #FFFFFF;
+}
+/* FIM - TODAS RESENHAS */
 
 /* FIM - CONTEÚDO */
 
