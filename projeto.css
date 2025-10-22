@@ -31,7 +31,7 @@
 #container {
     display: flex;
     flex-direction: row;
-    height: 100vh;
+    height: 100%;
 }
 /* FIM - CABEÇALHO */
 
@@ -115,7 +115,7 @@
     color: #000;
 }
 
-#ulPrin li a:hover + ul {
+#ulPrin li:hover > ul {
 /* quando o mouse passa sobre um item da lista principal (ulPrin)
    e encontrar o descendente */
     display: block;
@@ -137,6 +137,13 @@
     text-align: left;
     margin: 5px;
 }
+
+/*  */
+.conteudo h3 {
+    color: #000;
+    font-size: 25px;
+}
+/*  */
 
 /* Parágrafo Inicial */
 .conteudo p {
@@ -183,6 +190,8 @@
     border: solid 1px #5BAAE7;
 }
 /* Título principal */
+/* NAO VOU PRECISAR
+APAGAR QUANDO ATUALIZAR O CODIGO CENTRAL */
 .card h3{
     color: #000;
     font-size: 25px;
@@ -246,7 +255,8 @@
 #todasResenhas li {
     font-size: 20px;
     font-style: italic;
-    flex-basis: 30%;}
+    flex-basis: 30%;
+}
     /* Define a largura base de cada item. Com 30%, o Flexbox tentará colocar 3 itens por linha */
 
 #todasResenhas li a {
@@ -260,6 +270,36 @@
     color: #FFFFFF;
 }
 /* FIM - TODAS RESENHAS */
+
+/* INÍCIO - CAMPO DA RESENHA */
+#info {
+    display: flow-root;
+    background-color: #FFFAD6;
+    border-radius: 20px;
+}
+
+/* Lista de Infos: Autor, Ano de Publicação etc */
+#info ul li {
+    font-size: 20px;
+    list-style: none;
+}
+
+/* Capa e Contracapa do Livro | Série | Filme | HQ */
+#capa {
+    float: left;
+    margin: 10px;
+}
+#contracapa {
+    float: right;
+    margin: 10px;
+}
+
+#texto {
+    background-color: #FFFAD6;
+    padding: 5px;
+    border-radius: 20px;
+}
+/* FIM - CAMPO DA RESENHA */
 
 /* FIM - CONTEÚDO */
 
