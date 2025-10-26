@@ -150,6 +150,7 @@
     color: #000;
     font-size: 20px;
     text-align: justify;
+    text-indent: 5%;
     margin: 5px;
 }
 
@@ -256,12 +257,12 @@ APAGAR QUANDO ATUALIZAR O CODIGO CENTRAL */
     font-size: 20px;
     font-style: italic;
     flex-basis: 30%;
-}
     /* Define a largura base de cada item. Com 30%, o Flexbox tentará colocar 3 itens por linha */
+}
 
 #todasResenhas li a {
     text-decoration: none;
-    color: #333; /* Uma cor de link um pouco mais suave que o preto puro */
+    color: #333;
     display: block; /* Faz o link ocupar todo o espaço do <li> */
 }
 
@@ -274,7 +275,7 @@ APAGAR QUANDO ATUALIZAR O CODIGO CENTRAL */
 /* INÍCIO - CAMPO DA RESENHA */
 #info {
     display: flow-root;
-    background-color: #FFFAD6;
+    background-color: rgba(255, 250, 214, 0.8);
     border-radius: 20px;
 }
 
@@ -282,22 +283,25 @@ APAGAR QUANDO ATUALIZAR O CODIGO CENTRAL */
 #info ul li {
     font-size: 20px;
     list-style: none;
+    text-align: justify;
 }
 
 /* Capa e Contracapa do Livro | Série | Filme | HQ */
 #capa {
     float: left;
-    margin: 10px;
+    margin: 20px;
 }
 #contracapa {
     float: right;
-    margin: 10px;
+    margin: 20px;
 }
 
+/* Texto da resenha */
 #texto {
-    background-color: #FFFAD6;
+    background-color: rgba(255, 250, 214, 0.8);
     padding: 5px;
     border-radius: 20px;
+    padding: 15px;
 }
 /* FIM - CAMPO DA RESENHA */
 
@@ -307,6 +311,7 @@ APAGAR QUANDO ATUALIZAR O CODIGO CENTRAL */
 #footer {
     background-color: #000;
     color: #FFFFFF;
+    font-size: 20px;
     bottom: 0;
     left: 0;
     width: 100%;
