@@ -1,352 +1,93 @@
-/* MUDANÇA GERAL */
-* {margin: 0; padding: 0; box-sizing: border-box;
-    /* faz com que não se crie nenhuma margem (margin) e espaçamento interno (padding), box-sizing especifica o comportamento das propriedades de largura (width) e altura (height) */
+/* FONTES */
+@import url('https://fonts.googleapis.com/css2?family=Chau+Philomene+One:ital@0;1&display=swap'); /* Chau Philomene One */
+@import url('https://fonts.googleapis.com/css2?family=Mozilla+Text:wght@200..700&display=swap'); /* Mozilla Text */
+
+:root {
+    --fonte-titulo: 'Chau Philomene One', sans-serif;
+    --fonte-texto: 'Mozilla Text', sans-serif;
+    --cor-principal: #000 /* Preto */;
+    --cor-detalhe: #00406C/* Ex: #f4f4f4 */;
+    --tamanho-texto: /* Ex: 16px */;
 }
 
-/* INÍCIO - CABEÇALHO */
-.header {
-    background-color: #000;
-    /* cor de fundo */
-    width: 100%;
-    /* largura do header */
-    padding: 15px;
-    /* espaçamento interno */
-    top: 0;
-    /* aumenta ou diminue a distância do conteúdo em relação ao topo da página */
-    left: 0;
-    /* mesma coisa que o top */
+/* CONFIGURAÇÕES GERAIS */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--fonte-titulo);
 }
 
-/* Titulo */
-#tituloPrin{
-    color: #FFFFFF;
-    font-family: 'Courier New', Courier, monospace;
-    font-style: italic;
-    font-size: 50px;
-    text-align: center;
-    /* fonte */
+p, a {
+    font-family: var(--fonte-texto);
 }
 
-/* SEPARAÇÃO MENU (ESQUERDA) E CONTEUDO (DIREITA) */
+hr {
+    color: red;
+}
+
+
+/* Configuração base para ocupar toda a tela sem quebrar o layout */
+#homepage {
+    height: 100vh;
+}
+
+html, body {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Coloca o cabeçalho em cima e o container embaixo */
+    overflow: hidden; /* Trava a rolagem geral da página */
+}
+
+/* CONTAINER (Engloba Menu e Conteúdo) */
 #container {
     display: flex;
-    flex-direction: row;
-    min-height: 100vh;
-}
-/* FIM - CABEÇALHO */
-
-/* INÍCIO - MENU */
-.menu {
-    background-color: #000;
-    width: 200px;
-    text-align: center;
+    flex-direction: row; /* Posiciona o menu à esquerda e conteúdo à direita */
+    flex-grow: 1; /* Faz o container preencher todo o espaço abaixo do cabeçalho */
 }
 
-/* Titulo do menu */
-.menu h3 {
-    color: #FFFFFF;
-    font-size: 30px;
-    font-family: 'Courier New', Courier, monospace;
-    margin-bottom: 15px;
-    margin-top: 15px;
-    /* adiciona margens */
+
+/* CABEÇALHO */
+#cabecalho {
+    background-color: var(--cor-principal);
+    font-family: var(--fonte-texto);
+    flex-shrink: 0; /* Impede que o cabeçalho seja espremido */
 }
 
-/* Lista do menu principal */
-.menu ul {
-    list-style: none;
-    /* Remove as bolinhas da lista */
+/* MENU LATERAL */
+#menu {
+    background-color: var(--cor-principal);
+    width: 20%;
+    padding: 2vh;
 }
 
-/* Itens do menu */
-.menu ul li {
-    position: relative;
-    margin-bottom: 10px;
+/* Itens do Menu */
+#menu ul li {
+    margin: 10px 0;
+    transition: ease-out;
+}
+#menu ul li :hover {
+    scale: 1.24;
+    background-color: #001A2C;
+    transition: ease-in-out 0.6s;
 }
 
-/* Links dos itens */
-.menu ul li a {
-    color: #FFFFFF;
-    /* Muda a cor dos links */
-    font-size: 20px;
-    text-decoration: none;
-    /* Remove o sublinhado dos links */
-    display: inline-block;
-}
-/* FIM - MENU */
-
-/* INÍCIO - SUBMENU */
-/* Submenus dos itens */
-#ulPrin ul {
-    background-color: #D6D6E3;
-    display: none;
-    /* se eu colocar isso, o conteudo sai da tela */
-    left: 70%;
-    /* mudar isso == muda distância do submenu em relação à esquerda ao item principal */
-    top: 50%;
-    /* mudar isso == muda distância do topo do item em relação item principal */
-    position: absolute;
-    z-index: 1;
-    /* modifica a distância em Z (valor negativo move para tras e positivo para frente) */
-}
-
-/* Itens */
-#ulPrin ul li {
-    display: block;
-    /* para os itens não ficarem um cima do outro */
-    width: 200px;
-    margin: 0;
-    border: solid 1px #A3A3C0;
-}
-
-/* links dos itens */
-#ulPrin ul li a {
-    color: #000;
-    font-size: 20px;
-    padding: 10px;
-    display: block;
-    /* para não se sobreporem */
-    text-decoration: none;
-}
-
-/* passar mouse em cima dos links dos itens */
-#ulPrin li a:hover {
-    background-color: #FFFFFF;
-    color: #000;
-}
-
-#ulPrin li:hover > ul {
-/* quando o mouse passa sobre um item da lista principal (ulPrin)
-   e encontrar o descendente */
-    display: block;
-    /* ... vai tornar o filho visivel, exibindo-o como um bloco */
-}
-/* FIM - SUBMENU */
-
-/* INÍCIO - CONTEÚDO */
+/* ÁREA DE CONTEÚDO */
 .conteudo {
-    background-color: #FFFFFF;
-    padding: 10px;
-    width: 90%;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-/* Título */
-.conteudo h2 {
-    color: #000;
-    font-size: 35px;
-    text-align: left;
-    margin: 5px;
+    background-image: linear-gradient(to bottom, #003356 20%, #002E4E 80%);
+    color: white;
+    padding: 2rem; /* Espaçamento estrutural interno */
+    overflow-y: auto; /* Permite que você role o texto enquanto o menu e cabeçalho ficam parados */
 }
 
-/*  */
-.conteudo h3 {
-    color: #000;
-    font-size: 28px;
-    text-align: center;
-}
-/*  */
+/* =========================================
+   INTEGRAÇÃO E SOBREPOSIÇÃO AO BOOTSTRAP
+   ========================================= */
 
-/* Parágrafo Inicial */
-.conteudo p {
-    color: #000;
-    font-size: 20px;
-    text-align: justify;
-    text-indent: 5%;
-    margin: 5px;
+/* Aumentando a especificidade para você conseguir colorir os cartões sem o Bootstrap bloquear */
+.conteudo .card {
+    background-color: black/* Insira sua cor aqui (ex: brown) */;
+    margin-bottom: 1.5rem; /* Mantém os cartões separados uns dos outros */
+    padding: 2vh;
+    width: 100vh;
+    color: white;
+    /* Adicione border-radius, color, etc, ao seu gosto */
 }
-
-/* links */
-.conteudo a {
-    color: #333;
-    font-style: italic;
-    transition: ease 1s;
-}
-.conteudo a:hover {
-    color: #000;
-    text-decoration: underline;
-}
-
-/* Linha de separação entre os conteúdos */
-.conteudo hr {
-    margin: 20px;
-}
-
-/* CONTAINER DESTAQUES E NOVIDADES */
-.card {
-    background-color: #EDEDF5;
-    padding: 20px;
-    border-radius: 20px;
-    border: solid 1px #cccce3;
-    display: flex;
-    justify-content: space-around;
-    /* distribuição dos itens */
-    align-items: flex-start; 
-    /* Alinha os itens no topo */
-    flex-wrap: wrap;
-    /* Permite que os itens quebrem para a linha de baixo em telas pequenas */
-    transition: ease-in 1s;
-}
-
-.card:hover {
-    background-color: #A5D8FF;
-    border: solid 1px #5BAAE7;
-}
-/* Título principal */
-/* NAO VOU PRECISAR
-APAGAR QUANDO ATUALIZAR O CODIGO CENTRAL */
-.card h3{
-    color: #000;
-    font-size: 25px;
-}
-
-/* INÍCIO - DESTAQUES */
-/* Títulos dos destaques */
-#lendo h4, #assistindo h4 {
-    color: #000;
-    font-size: 20px;
-    font-style: italic;
-}
-
-/* Itens dos menus (livro e séries) */
-.destaques ul li {
-    color: #000;
-    font-size: 20px;
-    font-style: italic;
-}
-/* FIM - DESTAQUES */
-
-/* INÍCIO - NOVIDADES */
-/* Itens dos menus (livro e séries) */
-.novidades ul li {
-    font-size: 20px;
-    font-style: italic;
-}
-
-.novidades ul li a {
-    color: #000;
-    text-decoration: none;
-}
-
-.novidades li a:hover {
-    text-decoration: underline;
-    color: #FFFFFF;
-}
-/* FIM - NOVIDADES */
-
-/* INÍCIO - TODAS RESENHAS */
-/* Ajuste específico para o card resenhas */
-.resenhas.card {
-    display: block;
-    /* Sobrescreve o 'display: flex' da classe .card geral,
-    fazendo com que o título e a lista fiquem um embaixo do outro. */
-}
-
-#todasResenhas {
-    display: flex;
-    /* Transforma a lista em um contêiner flex */
-    flex-wrap: wrap;
-    /* permite a quebra de linha dos itens */
-
-    gap: 10px 20px; /* gap: [espaço vertical] [espaço horizontal]; */
-    /* Cria um espaço de 10px entre as linhas e 20px entre as colunas */
-    
-    list-style: none;
-    margin-top: 15px;
-    /* Espaço abaixo do título */
-}
-#todasResenhas li {
-    font-size: 20px;
-    font-style: italic;
-    flex-basis: 30%;
-    /* Define a largura base de cada item. Com 30%, o Flexbox tentará colocar 3 itens por linha */
-}
-
-#todasResenhas li a {
-    text-decoration: none;
-    color: #333;
-    display: block; /* Faz o link ocupar todo o espaço do <li> */
-}
-
-#todasResenhas li a:hover {
-    text-decoration: underline; /* Efeito clássico de hover para links */
-    color: #FFFFFF;
-}
-/* FIM - TODAS RESENHAS */
-
-/* INÍCIO - CAMPO DA RESENHA */
-#info {
-    display: flow-root;
-    background-color: rgba(255, 250, 214, 0.8);
-    border-radius: 20px;
-    padding: 15px;
-}
-
-/* Lista de Infos: Autor, Ano de Publicação etc */
-#info ul li {
-    font-size: 20px;
-    list-style: none;
-    text-align: justify;
-}
-
-/* Capa e Contracapa do Livro | Série | Filme | HQ */
-#capa {
-    float: left;
-    margin: 20px;
-    width: 250px;
-    height: 250px;
-    object-fit: cover;
-}
-#contracapa {
-    float: right;
-    margin: 20px;
-    width: 250px;
-    height: 250px;
-    object-fit: cover;
-}
-
-/* Texto da resenha */
-#texto {
-    background-color: rgba(255, 250, 214, 0.8);
-    padding: 5px;
-    border-radius: 20px;
-    padding: 15px;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-/* Seleciona todos os <p> que estão dentro de #texto */
-#texto p { 
-    line-height: 1.6;
-    /* Define a altura da linha. */
-}
-
-#texto details {
-    color: red;
-    font-size: 25px;
-    transition: ease-in-out 1.5s;
-    border-radius: 7px;
-    padding: 5px;
-    border: 1px solid;
-}
-#texto details:hover {
-    font-size: 27px;
-    border-radius: 10px;
-    padding: 7px;
-    border: 2px solid;
-}
-/* FIM - CAMPO DA RESENHA */
-
-/* FIM - CONTEÚDO */
-
-/* INÍCIO - RODAPÉ */
-#footer {
-    background-color: #000;
-    color: #FFFFFF;
-    font-size: 20px;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 10px;
-    text-align: center;
-}
-/* FIM - RODAPÉ */
