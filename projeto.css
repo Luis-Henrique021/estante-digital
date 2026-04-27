@@ -1,40 +1,73 @@
 /* FONTES */
 @import url('https://fonts.googleapis.com/css2?family=Chau+Philomene+One:ital@0;1&display=swap'); /* Chau Philomene One */
-@import url('https://fonts.googleapis.com/css2?family=Mozilla+Text:wght@200..700&display=swap'); /* Mozilla Text */
+@import url('https://fonts.googleapis.com/css2?family=Noticia+Text:ital,wght@0,400;0,700;1,400;1,700&display=swap'); /* Noticia Text */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap'); /* Josefin Sans */
 
 :root {
     --fonte-titulo: 'Chau Philomene One', sans-serif;
-    --fonte-texto: 'Mozilla Text', sans-serif;
+    --fonte-subtitulo: 'Josefin Sans', sans-serif;
+    --fonte-texto: 'Noticia Text', sans-serif;
     --cor-principal: #000 /* Preto */;
-    --cor-detalhe: #00406C/* Ex: #f4f4f4 */;
+    --cor-detalhe: #0062A3/* Azul Bem Escuro */;
+    --cor-detalhe-2: #00568F; /* Azul Escuro */;
+    --cor-hr: #E6F5FF;
     --tamanho-texto: /* Ex: 16px */;
 }
 
 /* CONFIGURAÇÕES GERAIS */
-h1, h2, h3, h4, h5, h6 {
+/* Títulos */
+h1, h2, h3 {
     font-family: var(--fonte-titulo);
+    text-decoration: none;
 }
-
-p, a {
+/* Subtítulos */
+h4, h5, h6 {
+    font-family: var(--fonte-subtitulo);
+    font-style: italic;
+    font-weight: 500;
+    text-decoration: none;
+}
+/* Texto comum */
+p, a, li, span {
     font-family: var(--fonte-texto);
+    text-decoration: none;
 }
 
-hr {
-    color: red;
+/* Listas */
+ul {
+    list-style-type: circle; /* Remove os marcadores das listas */ 
 }
 
+/* Linha Horizontal (HR) */
+.quebra-linha {
+    height: 1px; /* Define a altura da linha */
+    background-color: var(--cor-hr); /* Cor da linha */
+    margin: 20px 0; /* Espaçamento vertical */
+}
+
+/* Especificidade para links */
+.links {
+    text-decoration: solid underline;
+    color: inherit; /* Garante que os links herdem a cor do elemento pai */
+}
 
 /* Configuração base para ocupar toda a tela sem quebrar o layout */
-#homepage {
-    height: 100vh;
-}
-
 html, body {
     min-height: 100vh;
     margin: 0;
     display: flex;
     flex-direction: column; /* Coloca o cabeçalho em cima e o container embaixo */
-    overflow: hidden; /* Trava a rolagem geral da página */
+}
+
+/* PÁGINA INICIAL */
+/* Especificidade para o link do site */
+#link-site {
+    text-decoration: none; /* Remove o sublinhado do link do site */
+    font-family: var(--fonte-titulo);
+}
+/* Configuração da página inicial */
+#homepage {
+    height: 100vh;
 }
 
 /* CONTAINER (Engloba Menu e Conteúdo) */
@@ -48,7 +81,6 @@ html, body {
 /* CABEÇALHO */
 #cabecalho {
     background-color: var(--cor-principal);
-    font-family: var(--fonte-texto);
     flex-shrink: 0; /* Impede que o cabeçalho seja espremido */
 }
 
@@ -62,32 +94,38 @@ html, body {
 /* Itens do Menu */
 #menu ul li {
     margin: 10px 0;
-    transition: ease-out;
+    transition: all 0.5s ease-in;
 }
 #menu ul li :hover {
     scale: 1.24;
     background-color: #001A2C;
-    transition: ease-in-out 0.6s;
+    transition: ease-in-out 0.5s;
 }
 
 /* ÁREA DE CONTEÚDO */
 .conteudo {
-    background-image: linear-gradient(to bottom, #003356 20%, #002E4E 80%);
+    background-image: linear-gradient(to bottom, #00406C 20%, #003A61 80%);
     color: white;
     padding: 2rem; /* Espaçamento estrutural interno */
     overflow-y: auto; /* Permite que você role o texto enquanto o menu e cabeçalho ficam parados */
 }
 
-/* =========================================
-   INTEGRAÇÃO E SOBREPOSIÇÃO AO BOOTSTRAP
-   ========================================= */
-
-/* Aumentando a especificidade para você conseguir colorir os cartões sem o Bootstrap bloquear */
+/* CARDS */
+/* Geral */
 .conteudo .card {
-    background-color: black/* Insira sua cor aqui (ex: brown) */;
-    margin-bottom: 1.5rem; /* Mantém os cartões separados uns dos outros */
+    background-color: var(--cor-detalhe);
+    margin: 0 auto; /* Centers horizontally and keeps bottom margin */
     padding: 2vh;
-    width: 100vh;
+    width: 70%;
     color: white;
-    /* Adicione border-radius, color, etc, ao seu gosto */
+    transition: all 0.5s ease-out;
+}
+.card:hover {
+    background-color: var(--cor-detalhe-2);
+    scale: 1.05;
+    transition: ease-in-out 0.5s;
+}
+.conteudo .card h3 {
+    text-align: center;
+    font-size: 35px;
 }

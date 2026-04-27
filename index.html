@@ -15,7 +15,9 @@
 <body id="homepage">
     <!-- INÍCIO - CABEÇALHO -->
     <header class="p-2 w-100" id="cabecalho">
-        <h1 class="text-center text-white display-2">Gabinete de Curiosidades</h1>
+        <h1 class="text-center display-2">
+            <a id="link-site" class="text-white" href="index.html">Gabinete de Curiosidades</a>
+        </h1>
     </header>
     <!-- FIM - CABEÇALHO -->
 
@@ -26,30 +28,31 @@
             <ul class="nav flex-column text-center">
                 <li class="nav-item">
                     <a class="nav-link active text-white" id="home-link" aria-current="page" href="index.html">
-                        <i class="fa-solid fa-house fa-lg"></i> Home
+                        <i class="fa-solid fa-house"></i> Home
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="paginas/filmes.html">
-                        <i class="fa-solid fa-film fa-lg"></i> Filmes
+                    <a class="links nav-link text-white" href="paginas/filmes.html">
+                        <i class="fa-solid fa-film"></i> Filmes
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="paginas/hqs.html">
-                        <i class="fa-solid fa-book-open fa-lg"></i> HQs</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="paginas/livros.html">
-                        <i class="fa-solid fa-book fa-lg"></i> Livros    
+                    <a class="links nav-link text-white" href="paginas/hqs.html">
+                        <i class="fa-solid fa-book-open"></i> HQs
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="paginas/series.html">
-                        <i class="fa-solid fa-tv fa-lg"></i> Séries
+                    <a class="links nav-link text-white" href="paginas/livros.html">
+                        <i class="fa-solid fa-book"></i> Livros    
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="links nav-link text-white" href="paginas/series.html">
+                        <i class="fa-solid fa-tv"></i> Séries
                     </a>
                 </li>
             </ul>
@@ -63,7 +66,7 @@
                     Este espaço é o meu diário digital, um acervo catalogado dos livros, filmes, séries e HQs que consumo. Mais do que uma simples lista, aqui eu exploro e avalio as histórias que me cativam, dos personagens que me marcam e das ideias que me fazem pensar. Navegue pelas minhas estantes e descubra de tudo um pouco: do terror que tira o sono à comédia que aquece o coração.
                 </p>
                 
-            <hr>
+            <hr class="quebra-linha">
 
             <!-- INÍCIO - DESTAQUES -->
             <!-- leituras e assistidas recentes -->
@@ -88,20 +91,20 @@
             </div>
             <!-- FIM - ITEM EM DESTAQUE -->
 
-            <hr>
+            <hr class="quebra-linha">
 
             <!-- INÍCIO - NOVIDADES -->
             <div class="novidades card">
                 <h3>Novidades</h3>
                     <ul id="itensNovos">
                         <li>
-                            <a href="resenhas/livros/dracula.html">Drácula, por Bram Stoker (1897)</a>
+                            <a class="links" href="resenhas/livros/dracula.html">Drácula, por Bram Stoker (1897)</a>
                         </li>
                         <li>
-                            <a href="#">Item 2</a>
+                            <a class="links" href="#">Item 2</a>
                         </li>
                         <li>
-                            <a href="#">Item 3</a>
+                            <a class="links" href="#">Item 3</a>
                         </li>
                     </ul>
             </div>
