@@ -65,9 +65,9 @@ html, body {
     text-decoration: none; /* Remove o sublinhado do link do site */
     font-family: var(--fonte-titulo);
 }
-/* Configuração da página inicial */
-#Homepage {
-    height: 100vh;
+
+#Series-Page {
+    min-height: 100vh;
 }
 
 /* CONTAINER (Engloba Menu e Conteúdo) */
